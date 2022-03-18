@@ -29,7 +29,7 @@ class ConfigController
                 $this->UrlParametro = null;
             }
             echo "URL: {$this->Url} <br>";
-            echo "Controller:  {$this->UrlController}";
+            echo "Controller:  {$this->UrlController}<br>";
 
         }else{
             $this->UrlController = "Home";
@@ -67,7 +67,8 @@ class ConfigController
 
     public function carregar()
     {
-        $classe = "\\Sts\\Controllers" . $this->UrlController;
+        $classe = "\\Sts\\Controllers\\" . $this->UrlController;
         $classeCarregar = new $classe;
+        $classeCarregar->index();
     }
 }
