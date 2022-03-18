@@ -20,7 +20,7 @@ class ConfigController
             if(isset($this->UrlConjunto[0])){
                 $this->UrlController = $this->slugController($this->UrlConjunto[0]);
             }else{
-                $this->UrlController = "Home";
+                $this->UrlController = CONTROLER;
             }
 
             if(isset($this->UrlConjunto[1])){
@@ -32,7 +32,7 @@ class ConfigController
             echo "Controller:  {$this->UrlController}<br>";
 
         }else{
-            $this->UrlController = "Home";
+            $this->UrlController = CONTROLER;
             $this->UrlParametro = null;
         }
         
