@@ -1,0 +1,17 @@
+{
+    "description": "Projeto PHP OO",
+    "authors": [
+        {
+            "name": "Plinio Souza",
+            "email": "plininhodf@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Core\\" : "core",
+            "Sts\\" : "app/sts"
+        }
+    },
+    "require": {}
+  
+}
