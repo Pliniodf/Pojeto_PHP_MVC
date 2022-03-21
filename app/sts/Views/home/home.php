@@ -1,3 +1,3 @@
 <?php
 
-echo "View Home <br>";
+//echo "View Home <br>";
