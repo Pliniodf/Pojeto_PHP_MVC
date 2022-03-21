@@ -11,6 +11,7 @@ class Home
 {
     public function index()
     {
-        echo "Pagina Home";
+        $carregarView = new \Core\configView("sts/Views/home/home");
+        $carregarView->renderizar();
     }
 }
