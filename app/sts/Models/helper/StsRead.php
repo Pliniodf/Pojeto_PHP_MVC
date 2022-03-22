@@ -2,6 +2,7 @@
 
 namespace Sts\Models\helper;
 
+use Exception;
 use PDO;
 
 if (!defined('URL')) {
@@ -32,9 +33,26 @@ class StsRead extends StsConn
         $this->exeInstrucao();
     }
 
+    public function fullRead($Query, $ParseString = null)
+    {
+        $this->Select = (string) $Query;
+        if (!empty($ParseString)) {
+            parse_str($ParseString, $this->Value);
+        }
+        $this->exeInstrucao();
+    }
+
     private function exeInstrucao()
     {
         $this->conexao();
+        try {
+            $this->getInstrucao();
+            $this->Query->execute();
+            $this->Resultado = $this->Query->fetchAll();
+            //var_dump($this->Resultado);
+        } catch (Exception $ex) {
+            $this->Resultado = null;
+        }
     }
 
     private function conexao()
@@ -42,5 +60,17 @@ class StsRead extends StsConn
         $this->Conn = parent::getConn();
         $this->Query = $this->Conn->prepare($this->Select);
         $this->Query->setFetchMode(PDO::FETCH_ASSOC);
+    }
+
+    private function getInstrucao()
+    {
+        if ($this->Value) {
+            foreach ($this->Value as $Link => $Valor) {
+                if ($Link == 'limit' || $Link == 'offset') {
+                    $Valor = (int) $Valor;
+                }
+                $this->Query->bindValue(":{$Link}", $Valor, (is_int($Valor) ? PDO::PARAM_INT : PDO::PARAM_STR));
+            }
+        }
     }
 }
