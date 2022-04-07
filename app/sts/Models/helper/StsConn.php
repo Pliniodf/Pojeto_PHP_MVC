@@ -2,6 +2,7 @@
 
 namespace Sts\Models\helper;
 
+use Exception;
 use PDO;
 
 if (!defined('URL')) {
@@ -25,7 +26,7 @@ class StsConn
             }
             
         } catch (Exception $exc){
-            echo 'mensagem' . $exc->getMenssage();
+            echo 'mensagem' . $exc->getMessage();
             die;
         }
         return self::$Connect;

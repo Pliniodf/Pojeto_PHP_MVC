@@ -47,11 +47,15 @@ class StsRead extends StsConn
         $this->conexao();
         try {
             $this->getInstrucao();
-            $this->Query->execute();
+            
+            if(!$this->Query->execute())
+                throw new Exception('Erro durante a execução da query');
+                
             $this->Resultado = $this->Query->fetchAll();
-            //var_dump($this->Resultado);
+            
         } catch (Exception $ex) {
-            $this->Resultado = null;
+            
+            $this->Resultado = $ex->getMessage();
         }
     }
 
