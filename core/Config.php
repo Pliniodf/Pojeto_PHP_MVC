@@ -2,8 +2,8 @@
 session_start();
 ob_start();
 
-define('URL', 'http://localhost/Projeto_PHP_MVC/');
-define('URLADM', 'http://localhost/Projeto_PHP_MVC/adm/');
+define('URL', 'http://localhost/Projeto_MVC/');
+define('URLADM', 'http://localhost/Projeto_MVC/adm/');
 
 define('CONTROLER', 'Home');
 define('METODO', 'index');

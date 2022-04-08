@@ -29,7 +29,6 @@ if (!defined('URL')) {
                 $cont_slide = 0;
                 foreach ($this->Dados['sts_carousels'] as $carousel) {
                     extract($carousel);
-                    echo $id;
                     
                 
                 ?>
