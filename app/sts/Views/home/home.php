@@ -11,7 +11,7 @@ if (!defined('URL')) {
 ?>
 
 <main role="main">
-    <?php if(is_array($this->Dados['sts_carousels'])) : ?>
+    <?php if (is_array($this->Dados['sts_carousels'])) : ?>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <?php
@@ -29,24 +29,22 @@ if (!defined('URL')) {
                 $cont_slide = 0;
                 foreach ($this->Dados['sts_carousels'] as $carousel) {
                     extract($carousel);
-                    
-                
+
+
                 ?>
-                
-                <div class="carousel-item <?php if ($cont_slide == 0) {
-                                                echo 'active';
-                                            } ?>">
-                    <img class="first-slide img-fluid" src="<?php echo URL . 'assets/imagensofic/carousel/' . $id . '/' . $imagem; ?>" alt="<?= $titulo; ?>">
-                    <div class="container">
-                        <div class="carousel-caption <?= $posicao_text; ?>">
-                            <h1 class="d-none d-md-block"><?= $titulo; ?></h1>
-                            <p class="d-none d-md-block"><?= $descricao; ?></p>
-                            <p class="d-none d-md-block"><a class="btn btn-lg btn-danger" href="<?= $link; ?>" role="button"><?= $titulo_botao; ?></a></p>
+
+                    <div class="carousel-item <?php if ($cont_slide == 0) { echo 'active'; } ?>">
+                        <img class="first-slide img-fluid" src="<?php echo URL . 'assets/imagensofic/carousel/' . $id . '/' . $imagem; ?>" alt="<?= $titulo; ?>">
+                        <div class="container">
+                            <div class="carousel-caption <?= $posicao_text; ?>">
+                                <h1 class="d-none d-md-block"><?= $titulo; ?></h1>
+                                <p class="d-none d-md-block"><?= $descricao; ?></p>
+                                <p class="d-none d-md-block"><a class="btn btn-lg btn-<?= $cor; ?>" href="<?= $link; ?>" role="button"><?= $titulo_botao; ?></a></p>
+                            </div>
                         </div>
                     </div>
-                </div>
                 <?php
-                $cont_slide++;
+                    $cont_slide++;
                 }
                 ?>
 
