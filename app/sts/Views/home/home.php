@@ -124,5 +124,3 @@ if (!defined('URL')) {
             </div>
         </div>
 </main>
-<?php
-//var_dump($cont_slide);

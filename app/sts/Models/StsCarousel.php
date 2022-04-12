@@ -29,20 +29,20 @@ class StsCarousel
         $this->Resultado['sts_carousels'] = $listar->getResultado(); */
         /* var_dump($this->Resultado);
         die; */
-        $listar->fullRead("SELECT car.id, car.nome, car.imagem, car.titulo, car.descricao, car.posicao_text, car.titulo_botao, car.link,
+        /*$listar->fullRead("SELECT car.id, car.nome, car.imagem, car.titulo, car.descricao, car.posicao_text, car.titulo_botao, car.link,
                 cors.cor
                 FROM sts_carousels car
                 INNER JOIN adms_cors cors ON cors.id=car.adms_cor_id
                 WHERE adms_sit_id =:adms_situacoes_id ORDER BY ordem ASC LIMIT :limit", 'adms_situacoes_id=1&limit=3');
-        $this->Resultado['sts_carousels'] = $listar->getResultado();
+        $this->Resultado['sts_carousels'] = $listar->getResultado();*/
 
         //listar filtrando as palavras nome e link projeto casa
-        /* $listar->fullRead("SELECT car.id, car.nome, car.imagem, car.titulo, car.descricao, car.posicao_text, car.titulo_botao, car.link,
+        $listar->fullRead("SELECT car.id, car.nome, car.imagem, car.titulo, car.descricao, car.posicao_text, car.titulo_botao, car.link,
                 cors.cor
                 FROM sts_carousels car
                 INNER JOIN adms_cors cors ON cors.id=car.adms_cor_id
                 WHERE adms_situacoes_id =:adms_situacoes_id ORDER BY ordem ASC LIMIT :limit", 'adms_situacoes_id=1&limit=4');
-        $this->Resultado['sts_carousels'] = $listar->getResultado(); */
+        $this->Resultado['sts_carousels'] = $listar->getResultado();
 
         /* var_dump($this->Resultado['sts_carousels']);
         die(); */
