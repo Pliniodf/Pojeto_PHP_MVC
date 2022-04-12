@@ -61,6 +61,7 @@ if (!defined('URL')) {
                 <span class="sr-only">Next</span>
             </a>
         </div>
+
     <?php endif; ?>
     <?php extract($this->Dados['sts_servicos'][0]); ?>
     <div class="jumbotron servicos">
@@ -70,6 +71,7 @@ if (!defined('URL')) {
                 <div class="card text-center card-um">
                     <div class="icon-row tamanh-icone">
                         <span class="step size-96 text-danger">
+
                             <i class="<?= $icone_um ?>"></i>
                         </span>
                     </div>
@@ -104,6 +106,7 @@ if (!defined('URL')) {
         </div>
     </div>
 
+
         <?php extract($this->Dados['sts_video'] [0]); ?>
         <div class="jumbotron video">
             <div class="container">
@@ -115,11 +118,11 @@ if (!defined('URL')) {
                         <div class="embed-responsive embed-responsive-16by9">
                             <?= $video ?>
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
-    
 </main>
 <?php
 //var_dump($cont_slide);

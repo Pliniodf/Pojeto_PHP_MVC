@@ -12,7 +12,7 @@ define('METODO', 'index');
 define('HOST', 'localhost');
 define('USER', 'root');
 define('PASS', '');
-define('DBNAME', 'celke');
+/* define('DBNAME', 'celke'); */
  
 //teste IPAC
-/* define('DBNAME', 'ipaconli_form'); */
+define('DBNAME', 'ipaconli_form');
