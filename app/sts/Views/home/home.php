@@ -8,6 +8,7 @@ if (!defined('URL')) {
 //echo "View Home <br>";
 //var_dump($this->Dados['sts_carousels']);
 //die;
+//var_dump($this->Dados['sts_servicos']);
 ?>
 
 <main role="main">
@@ -33,7 +34,9 @@ if (!defined('URL')) {
 
                 ?>
 
-                    <div class="carousel-item <?php if ($cont_slide == 0) { echo 'active'; } ?>">
+                    <div class="carousel-item <?php if ($cont_slide == 0) {
+                                                    echo 'active';
+                                                } ?>">
                         <img class="first-slide img-fluid" src="<?php echo URL . 'assets/imagensofic/carousel/' . $id . '/' . $imagem; ?>" alt="<?= $titulo; ?>">
                         <div class="container">
                             <div class="carousel-caption <?= $posicao_text; ?>">
@@ -59,6 +62,64 @@ if (!defined('URL')) {
             </a>
         </div>
     <?php endif; ?>
+    <?php extract($this->Dados['sts_servicos'][0]); ?>
+    <div class="jumbotron servicos">
+        <div class="container">
+            <h2 class="display-4 text-center" style="margin-bottom: 40px;"><?= $titulo ?></h2>
+            <div class="card-deck">
+                <div class="card text-center card-um">
+                    <div class="icon-row tamanh-icone">
+                        <span class="step size-96 text-danger">
+                            <i class="<?= $icone_um ?>"></i>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $nome_um ?></h5>
+                        <p class="card-text lead"><?= $descricao_um ?></p>
+                    </div>
+                </div>
+                <div class="card text-center card-dois">
+                    <div class="icon-row tamanh-icone">
+                        <span class="step size-96 text-danger">
+                            <i class="<?= $icone_dois ?>"></i>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $nome_dois ?></h5>
+                        <p class="card-text lead"><?= $descricao_dois ?></p>
+                    </div>
+                </div>
+                <div class="card text-center card-tres">
+                    <div class="icon-row tamanh-icone ">
+                        <span class="step size-96 text-danger">
+                            <i class="<?= $icone_tres ?>"></i>
+                        </span>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title"><?= $nome_tres ?></h5>
+                        <p class="card-text lead"><?= $descricao_tres ?></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <?php extract($this->Dados['sts_video'] [0]); ?>
+        <div class="jumbotron video">
+            <div class="container">
+                <h2 class="display-4 text-center video-titulo" style="margin-bottom: 40px;"><?= $titulo ?></h2>
+                <p class="lead text-center video-parag"><?= $descricao ?></p>
+                <div class="row justify-content-md-center video-cont">
+
+                    <div class="col-12 col-md-8">
+                        <div class="embed-responsive embed-responsive-16by9">
+                            <?= $video ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
 </main>
 <?php
 //var_dump($cont_slide);
